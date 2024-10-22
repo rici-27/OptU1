@@ -1,3 +1,6 @@
+""" Das hier ist die stumpfe Lösung zu 4.2 """
+
+
 import numpy as np
 
 ## das sind die drei gegebene Punkte
