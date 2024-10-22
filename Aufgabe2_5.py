@@ -2,7 +2,7 @@
 import NelderMead
 
 
-## Rosenbrock Funktion
+print("Rosenbrock Funktion")
 def f1(x):
     return 100 * (x[0]-x[1]**2)**2 + (1-x[0])**2
 
@@ -11,7 +11,7 @@ x1 = np.array([-1.2, 1])
 NelderMead.NelderMead(f1,x1)
 
 
-## Crescent Funktion
+print("Crescent Funktion")
 def f2(x):
     return max(np.array([x[0]**2 + (x[1]-1)**2 + x[1]-1, -x[0]**2 - (x[1]-1)**2 + x[1]+1]))
 
@@ -20,7 +20,7 @@ x2 = np.array([-1.5,2])
 NelderMead.NelderMead(f2,x2)
 
 
-## McKinnon
+print("McKinnon")
 def f3(x):
     def g(y):
         if y >= 0:

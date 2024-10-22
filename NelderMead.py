@@ -15,7 +15,6 @@ def NelderMead(f, x, c=1, a=1, b=2, g=1/2):
     
     xb, xz, xw = sorted(x, key = f)
     size = np.array([np.linalg.norm(xz-xb), np.linalg.norm(xw-xb)])
-    print(size)
     k = 1
     ## als abbruchsbedingung haben wir hier die Größe des Simplex
 
@@ -52,4 +51,4 @@ def NelderMead(f, x, c=1, a=1, b=2, g=1/2):
         size = np.array([np.linalg.norm(xz-xb), np.linalg.norm(xw-xb)])
     
     print("Wir haben", k, "Schritte gebraucht.")
-    print("Unser finaler Simplex ist:", x)
+    print("Unser finaler Simplex ist:", x, "\n")
