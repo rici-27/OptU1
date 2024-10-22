@@ -2,7 +2,7 @@ import numpy as np
 
 ## das sind die drei gegebene Punkte
 z1 = np.array([0,0])
-z2 = np.array([10,1])
+z2 = np.array([0,1])
 z3 = np.array([1,0])
 z = np.array([z1,z2,z3])
 print("Die gegebenen Punkte sind", z)
