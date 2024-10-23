@@ -29,7 +29,7 @@ def NelderMead(f, x, c=1, a=1, b=2, g=1/2):
             x = np.array([xb,xz,xw])
         elif f(xr) < f(xb):
             xc = m + b* (xr-m)
-            if f(xc) < f(xb):
+            if f(xc) < f(xr):
                     xw = xc
                     x = np.array([xb,xz,xw])
             else:
