@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 plt.rcParams["figure.figsize"] = [7.50, 3.50]
 plt.rcParams["figure.autolayout"] = True
 
-u = np.linspace(-10, 10, 100)
+u = np.linspace(-3, 3, 100)
 
 
 
@@ -51,10 +51,15 @@ x = 1
 beta = 0.5
 sigma = 0.01
 
+
+## hier sollen wir sigma = 0 und sigma = 0.01 testen
+
+
 for i in range(20):
-    print(x)
+    print("Runde:", i)
+    print("Punkt:", x)
     d = - nablaf(x)
-    print(d)
+    print("Abstiegsrichtung:", d)
     t = armijo(f, x, d, beta, sigma, nablaf)
-    print(t)
+    print("Schrittweite:", t)
     x = x + t * d
