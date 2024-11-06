@@ -1,6 +1,14 @@
 import numpy as np
 import autograd.numpy as np
 from autograd import grad
+from matplotlib import pyplot as plt
+
+plt.rcParams["figure.figsize"] = [7.50, 3.50]
+plt.rcParams["figure.autolayout"] = True
+
+u = np.linspace(-10, 10, 100)
+
+
 
 def f(x):
     if x < -1:
@@ -9,6 +17,12 @@ def f(x):
         return x**2 - 1
     else:
         return (3/4) * (1-x)**2 - 2*(1-x)
+    
+f_vec = np.vectorize(f)
+    
+plt.plot(u, f_vec(u), color='red')
+
+plt.show()
 
 
 def armijo(f, x, d, beta, sigma, nablaf):
@@ -26,6 +40,12 @@ def nablaf(x):
         return 2*x
     else:
         return -(3/2) * (1-x) + 2  
+    
+nablaf_vec = np.vectorize(nablaf)
+
+plt.plot(u, nablaf_vec(u), color='red')
+
+plt.show()
 
 x = 1
 beta = 0.5
@@ -34,5 +54,7 @@ sigma = 0.01
 for i in range(20):
     print(x)
     d = - nablaf(x)
+    print(d)
     t = armijo(f, x, d, beta, sigma, nablaf)
+    print(t)
     x = x + t * d
